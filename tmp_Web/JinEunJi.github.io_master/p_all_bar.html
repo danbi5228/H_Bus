@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="shortcut icon" href="../images/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <title>Chapter 05 - Chart.js</title>
+    </head>
+    <body>
+        <canvas id="myChart"></canvas>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['04', '05', '06', '07', '08', '09', '10', '11',
+                    '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'],
+                    datasets: [{
+                        label: '전체-주말',
+                        backgroundColor: '#89dbff',
+                        borderColor: '#89dbff',
+                        data: [330,3267,4551,5828,9271,10537,9580,9134,10754,
+                        11318,11742,11713,12462,13002,12820,10847,11089,10692,8589,3496]
+                    }, 
+                    {
+                        label: '전체-주중',
+                        backgroundColor: '#d63e2a',
+                        borderColor: '#d63e2a',
+                        data: [ 1423,15291,37446,79472,81751,45756,32316,34354,40067,
+                        44358,37987,44149,51363,68388,76155,49810,42226,40337,32130,12774]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+        </script>
+    </body>
+</html> 
