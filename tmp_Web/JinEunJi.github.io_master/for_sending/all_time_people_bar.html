@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <title>all_time_people</title>
+    </head>
+    <body>
+        <canvas id="myChart"></canvas>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['04:00', '05:00', '06:00', '07:00', '08:00', '09:00',
+                    '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00',
+                    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+                    datasets: [{
+                        label: '시간별 전체 화성 버스 이용량',
+                        backgroundColor: '#000880',
+                        borderColor: '#000880',
+                        data: [656,7022,16566,36018,36950,20677,14633,15939,19237,
+                        21824,17805,19979,23622,30963,34537,23296,19940,19106,14938,5682]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+        </script>
+    </body>
+</html> 

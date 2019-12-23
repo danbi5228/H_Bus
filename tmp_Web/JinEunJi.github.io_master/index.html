@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="KR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Hoptimization</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+    @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css'); 
+    @import url('http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css');
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,900&display=swap');
+    @import url('http://fonts.googleapis.com/earlyaccess/nanumpenscript.css');
+    @import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Gothic+A1&display=swap');
+    @import url('http://fonts.googleapis.com/earlyaccess/jejugothic.css');
+    
+    .jejugothic {font-family: 'Jeju Gothic', serif;}
+    .gothica1 {font-family: 'Gothic A1', sans-serif;}
+    .solway {font-family: 'Solway', serif;}
+    .lilitaone {font-family: 'Lilita One', cursive;}
+    .nanumpenscript1 {font-family: 'Nanum Pen Script', cursive;}
+    .nanumgothic {font-family: 'Nanum Gothic', sans-serif; }
+    .nanumgothiccoding {font-family: 'Nanum Gothic Coding', monospace;}
+    .notosanskr {font-family: 'Noto Sans KR', sans-serif;}
+    wrapper{
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href=#Home>
+        <strong><span style="color:white; font-weight:bold">Hoptimization</span></strong>
+        <IMG SRC="img/bus.png" ALT="bus" width="30" height="30">
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#Home">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Analysis">Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Optimization">Optimization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#More">More</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://github.com/danbi5228/H_Bus" class="nav-link border border-light rounded"
+              target="_blank">
+              <i class="fab fa-github mr-2"></i>H-Bus GitHub
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Carousel Wrapper-->
+  <div id="Home" class="carousel slide carousel-fade" data-ride="carousel" >
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <div class="view" style="background-image: url('./img/dongtan.PNG'); background-repeat: no-repeat; background-size: cover;">
+
+          <!-- Mask & flexbox options-->
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="notosanskr" style ="padding-top: 10px">
+                <strong><span style = font-weight:bold;font-size:1em;>버스 노선 최적화</strong></span>
+              </h1>
+
+              <p class="nanumgothic" style="padding-top: 20px">
+                <strong>편리한 화성시의 버스 이용을 위한 PROJECT
+                  <br>10만개의 버스 이용량 데이터를 기반으로 버스 노선을 최적화 하였습니다.</strong>
+              </p>
+
+              <a href="#About" class="btn btn-outline-white btn-lg">Start</a>
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/First slide-->
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+  <!--Main layout-->
+  <main>
+    <div class="container", style ="padding-top: 10px" , id=About>
+
+      <!--Section: Main info-->
+      <section>
+
+          <div>
+              <!-- Main heading -->
+              <h3 class="h3 text-center mb-5" style="padding-top: 60px; font-size: 30pt;">About</h3>
+              <p class="notosanskr text-center"> <strong style="font-size: 13pt; font-weight: bold;">화성시</strong>는 전국 기초단체 중 가장 공장이 많은 지역이며, <br>동탄, 병점 등 신도시의 입주로 2018년 한해 동안
+                  인구가 가장 많이 증가한 지자체입니다.</p>
+              <p class="nanumgothic text-center" > 이로 인해 파생되는 교통문제를 해결하기 위해,<br> 저희 <strong style="font-size: 13pt; font-weight: bold;">Hoptimization</strong> 팀은  화성시내 인구와 이동형태를 고려한 관내 <strong style="font-size: 13pt; font-weight: bold;">버스 노선 최적화 프로젝트</strong>를 진행했습니다.</p>
+              <!-- Main heading -->
+
+              <br><br>
+              <h4 class="h4 text-center nanumgothic" style="font-weight: bold; font-size:18pt;">가설</h4>
+              <br>
+              <h4 class="h4 text-center nanumgothic" style="font-weight: bold; font-size:18pt;">관련 기사</h4>
+              <br>
+              <div class="row wow fadeIn" style="padding-left: 100px;">
+                  <div class="col-lg-6 col-md-12 px-4">
+                    <p class="text-right"><a class="nanumgothic" href="http://www.bigtanews.co.kr/news/articleView.html?idxno=4570">
+                      인구 증가 전국 1위 화성시 ... "동탄 교통 문제 해결하면 인정"</a></p>
+                    <p class="text-right"><a class="nanumgothic" href="http://m.ihsnews.com/a.html?uid=33563&page=1&sc=&s_k=%EA%B5%90%ED%86%B5%EB%82%9C&s_t=">
+                        교통문제 해결을 위해 대광위에 거는 기대</a></p>
+                    <p class="text-right"><a class="nanumgothic" href="http://www.hsj.co.kr/7212">
+                        "못살겠다 동탄!"…교통지옥 때문에 1600명 집회 참석</a></p>
+                    <p class="text-right"><a class="nanumgothic" href="http://ilyo.co.kr/?ac=article_view&entry_id=323458">
+                      화성시, 동탄 교통문제 마라톤 댓글 토론 ‘눈에 띄네’</a></p>
+                    </div>
+               <div class="col-lg-6 col-md-12 px-4">
+                  <p class="text-lett"><a class="nanumgothic">정형기 기자, 빅터 뉴스, 2019.09</p></a>
+                  <p class="text-lett"><a class="nanumgothic"></a>화성신문, 2019.06</p></a>
+                  <p class="text-lett"><a class="nanumgothic"></a>윤미 기자, 화성저널, 2018.12</p></a>
+                  <p class="text-lett"><a class="nanumgothic"></a>김장수 기자, 일요신문, 2019.01</p></a>
+               </div>
+              </div>
+  
+            </div>
+        <!--Grid row-->
+
+
+      </section>
+      <!--Section: Main info-->
+
+      <hr class="my-5", id = Analysis>
+
+      <!--Section: Main features & Quick Start-->
+      <section> 
+
+        <h3 class="h3 text-center mb-5", style="padding-top: 30px; font-size: 30pt;">Analysis</h3>
+        <p class="notosanskr text-center">화성시 버스 노선을 최적화 하기 위해 도로 상황 및 현재 버스 운영 실정, 이용 현황을 파악하였습니다.<br>
+          데이터는 승객들의 승하차 정보(2018년 7월) 및 유동 인구 데이터, 경기도 버스 노선 및 도로 현황 데이터 등을 이용하였습니다.
+        <br><br><br>
+          <div>
+        <h5 class="notosanskr text-center" style="font-size: 18pt; font-weight: bold;">화성시 도로 네트워크</h5><br>
+        <p class="nanumgothic text-center" style="font-size: 10pt; font-style: italic;">현재 화성시 도로의 모습을 확인할 수 있습니다.</p><br>
+        <p class="text-center"><iframe id="wrapper" width="1000" height="500" src="test_network.html" frameborder="0"></iframe>
+        </div>
+        
+        <div style="padding-top: 60pt;">
+        <h5 class="notosanskr text-center" style="font-size: 18pt; font-weight: bold; padding-bottom: 30px;">화성시 버스 노선 현황</h5>
+        <p class="nanumgothic text-center" style="font-size: 10pt; font-style: italic;">화성시의 전체 버스노선을 확인 할 수 있으며,<br> 이용량 순으로 TOP10의 노선 및 정류소의 모습을 확인할 수 있습니다.</p><br>
+        <p class="text-center"><iframe id="wrapper" width="1000" height="500" src="station_route_ranking_visualization.html" frameborder="0"></iframe>
+      </p></div>
+
+      <div style="padding-top: 60pt;">
+          <h5 class="notosanskr text-center" style="font-size: 18pt; font-weight: bold; padding-bottom: 30px;">화성시 버스 이용 현황</h5>
+          <p class="nanumgothic text-center" style="font-size: 10pt; font-style: italic;">버스 이용자들의 시간대별 이용 현황과<br> 가장 많이 사용하는 버스 노선을 확인 할 수 있습니다.<br></p><br>
+          <p class="text-center"><iframe id="wrapper" width="1000" height="500" src="time_bar.html" frameborder="0"></iframe></p>
+          <p class="nanumgothic text-center" style="font-size: 13pt; font-weight: 500;">시간대별 이용 현황</p><br>
+          <p class="text-center"><iframe id="wrapper" width="1000" height="500" src="all.html" frameborder="0"></iframe></p>
+          <p class="nanumgothic text-center" style="font-size: 13pt; font-weight: 500;">시간대별 가장 많이 사용하는 노선</p><br>
+          <p class="text-center"><iframe id="wrapper" width="1000" height="500" src="scatter.html" frameborder="0"></iframe></p>
+          <p class="nanumgothic text-center" style="font-size: 13pt; font-weight: 500;">시간대별 가장 많이 사용하는 노선 TOP 10</p><br>
+    
+
+        
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5", id = Optimization>
+
+      <!--Section: Not enough-->
+      <section>
+
+        <h2 class="my-5 h3 text-center", style="padding-top: 30px; font-size: 30pt;">Optimization</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Free for personal and commercial use</h6>
+                <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as
+                  commercial projects.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">400+ UI elements</h6>
+                <p class="grey-text">An impressive collection of flexible components allows you to develop any project.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">600+ icons</h6>
+                <p class="grey-text">Hundreds of useful, scalable, vector icons at your disposal.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Fully responsive</h6>
+                <p class="grey-text">It doesn't matter whether your project will be displayed on desktop, laptop,
+                  tablet or mobile phone. MDB
+                  looks great on each screen.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-4 flex-center">
+            <img src="https://mdbootstrap.com/img/Others/screens.png" alt="MDB Magazine Template displayed on iPhone"
+              class="z-depth-0 img-fluid">
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-4 mt-2">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">70+ CSS animations</h6>
+                <p class="grey-text">Neat and easy to use animations, which will increase the interactivity of your
+                  project and delight your visitors.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Plenty of useful templates</h6>
+                <p class="grey-text">Need inspiration? Use one of our predefined templates for free.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Easy installation</h6>
+                <p class="grey-text">5 minutes, a few clicks and... done. You will be surprised at how easy it is.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Easy to use and customize</h6>
+                <p class="grey-text">Using MDB is straightforward and pleasant. Components flexibility allows you deep
+                  customization. You will
+                  easily adjust each component to suit your needs.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/Third column-->
+
+        </div>
+        <!--/First row-->
+
+      </section>
+      <!--Section: Not enough-->
+
+      <hr class="mb-5", id = More>
+
+      <!--Section: More-->
+      <section>
+
+        <h2 class="my-5 h3 text-center", style="padding-top: 30px; font-size: 30pt;">Hoptimization</h2><br>
+        <p class="nanumgothic text-center" style="font-size: 12pt; font-style: italic;"> Hoptimization이란,<br>희망을 뜻하는Hope와 최적화를 뜻하는 
+        optimization의 합성어로 <br>화성시 버스 노선을 최적화 하고 싶다는 팀원들의 간절한 소망이 담겨져 있습니다.</strong> </p>
+
+        <br><br><br>
+        <!--First row-->
+        <div class="row features-small mt wow fadeIn">
+
+          <!--Grid column-->
+          <div style="padding-left: 40pt; padding-right: 25pt;">
+            <!--Grid row-->
+            <div>
+              <div>
+                <IMG SRC="img/1.png" ALT="hansol" width="180" height="180"><br><br>
+                <p class="nanumgothic text-center" style="font-weight: 700; font-size: 14pt;">윤한솔</p>
+                <p class="grey-text mt-2 text-center" style="font-size: 10pt;"><Strong style="color: white; font-size: 12pt;">____<br> </Strong><Strong style="color: black; font-size: 12pt;">Data Analyst</Strong><br></bt><br>
+                  Project Managing<br>
+                  Data Visualization<br>
+                  Data Preprocessing<br>
+                  Data Analysis<br>
+                  Web Design</p> 
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <div style="padding-right: 25pt;">
+              <!--Grid row-->
+              <div>
+                <div>
+                  <IMG SRC="img/2.png" ALT="eunsol" width="180" height="180"><br><br>
+                  <p class="nanumgothic text-center" style="font-weight: 700; font-size: 14pt;">고은솔</p>
+                  <p class="grey-text mt-2 text-center" style="font-size: 10pt;"><Strong style="color: black; font-size: 12pt;">Data Analyst<br>/ Project Manager</Strong><br>
+                  <br>  Data Visualization<br>
+                    Data Preprocessing<br>
+                    Data Analysis<br>
+                    Data Collection<br>
+                    Web Design</p> 
+                </div>
+              </div>
+              <!--/Grid row-->
+            </div>
+            <div style="padding-right: 25pt;">
+                <!--Grid row-->
+                <div>
+                  <div>
+                    <IMG SRC="img/3.png" ALT="eunji" width="180" height="180"><br><br>
+                    <p class="nanumgothic text-center" style="font-weight: 700; font-size: 14pt;">진은지</p>
+                    <p class="grey-text mt-2 text-center" style="font-size: 10pt;"><Strong style="color: black; font-size: 12pt;">Data Analyst<br>/ Project Manager</Strong><br>
+                     <br> Data Visualization<br>
+                      Data Preprocessing<br>
+                      Data Analysis<br>
+                      Web Development<br>
+                      Project planning<br></p>
+                  </div>
+                </div>
+                <!--/Grid row-->
+              </div>
+              <div style="padding-right: 25pt;">
+                  <!--Grid row-->
+                  <div>
+                    <div>
+                      <IMG SRC="img/4.png" ALT="danbi" width="180" height="180"><br><br>
+                      <p class="nanumgothic text-center" style="font-weight: 700; font-size: 14pt;">한단비</p>
+                      <p class="grey-text mt-2 text-center" style="font-size: 10pt;"><Strong style="color: white; font-size: 12pt;">____ <br></Strong><Strong style="color: black; font-size: 12pt;">Data Analyst</Strong><br><br>
+                        Data Visualization<br>
+                        Data Preprocessing<br>
+                        Data Analysis<br>
+                        Web Development<br>
+                        Git Coaching</p> 
+                    </div>
+                  </div>
+                  <!--/Grid row-->
+                </div>
+                <div>
+                    <!--Grid row-->
+                    <div>
+                      <div>
+                        <IMG SRC="img/5.png" ALT="sungbo" width="180" height="180"><br><br>
+                        <p class="nanumgothic text-center" style="font-weight: 700; font-size: 14pt;">김성보</p>
+                        <p class="grey-text mt-2 text-center" style="font-size: 10pt;"><Strong style="color: white; font-size: 12pt;">____<br> </Strong><Strong style="color: black; font-size: 12pt;">Data Analyst</Strong><br>
+                         <br> Data Visualization<br>
+                          Data Preprocessing<br>
+                          Data Analysis<br>
+                          Web Design<br>
+                          Tech Leading</p> 
+                      </div>
+                    </div>
+                    <!--/Grid row-->
+                  </div>
+          <!--/Grid column-->
+
+          
+
+        </div>
+        <!--/Second row-->
+
+        <h2 class="my-5 h3 text-center", style="padding-top: 30px; font-size: 30pt;">Q&A</h2><br>
+
+      </section>
+      <!--Section: More-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+    <div class="pt-4">
+      
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+   
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="https://github.com/dataitgirls3" target="_blank" style="color:lightgrey"> Hoptimization, DaitGirls3 </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>

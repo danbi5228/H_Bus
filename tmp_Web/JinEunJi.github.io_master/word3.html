@@ -1,0 +1,216 @@
+<!--그냥 도는거 ... 이건 된다!-->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+  <script>
+
+//Simple animated example of d3-cloud - https://github.com/jasondavies/d3-cloud
+//Based on https://github.com/jasondavies/d3-cloud/blob/master/examples/simple.html
+
+// Encapsulate the word cloud functionality
+function wordCloud(selector) {
+
+    var fill = d3.scale.category20();
+
+    //Construct the word cloud's SVG element
+    var svg = d3.select(selector).append("svg")
+        .attr("width", 500)
+        .attr("height", 500)
+        .append("g")
+        .attr("transform", "translate(250,250)");
+
+
+    //Draw the word cloud
+    function draw(words) {
+        var cloud = svg.selectAll("g text")
+                        .data(words, function(d) { return d.text; })
+
+        //Entering words
+        cloud.enter()
+            .append("text")
+            .style("font-family", "Impact")
+            .style("fill", function(d, i) { return fill(i); })
+            .attr("text-anchor", "middle")
+            .attr('font-size', 1)
+            .text(function(d) { return d.text; });
+
+        //Entering and existing words
+        cloud
+            .transition()
+                .duration(600)
+                .style("font-size", function(d) { return d.size + "px"; })
+                .attr("transform", function(d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .style("fill-opacity", 1);
+
+        //Exiting words
+        cloud.exit()
+            .transition()
+                .duration(200)
+                .style('fill-opacity', 1e-6)
+                .attr('font-size', 1)
+                .remove();
+    }
+
+
+    //Use the module pattern to encapsulate the visualisation code. We'll
+    // expose only the parts that need to be public.
+    return {
+
+        //Recompute the word cloud for a new set of words. This method will
+        // asycnhronously call draw when the layout has been computed.
+        //The outside world will need to call this function, so make it part
+        // of the wordCloud return value.
+        update: function(words) {
+            d3.layout.cloud().size([500, 500])
+                .words(words)
+                .padding(5)
+                .rotate(function() { return ~~(Math.random() * 2) * 90; })
+                .font("Impact")
+                .fontSize(function(d) { return d.size; })
+                .on("end", draw)
+                .start();
+        }
+    }
+
+}
+
+//Some sample data - http://en.wikiquote.org/wiki/Opening_lines
+// var words = [
+//     "You don't know about me without you have read a book called The Adventures of Tom Sawyer but that ain't no matter.",
+//     "The boy with fair hair lowered himself down the last few feet of rock and began to pick his way toward the lagoon.",
+//     "When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
+//     "It was inevitable: the scent of bitter almonds always reminded him of the fate of unrequited love."
+// ]
+
+var words = [
+"1_조암터미널, 1_조암농협, 조암GS주유소, 어은삼거리, 어은4리, 장안면행정복지센터, 사랑리, 덕다2리앞 ,  덕다리입구 ,  독정1리 ,  독정삼거리 ,  장안9리입구 ,  장명초등학교 ,  장안6리 ,장안3리 ,  장안8리 ,  장명초분교 ,  장안제일교회 ,  장안6리.물구리 ,  덕다2리앞(구래) , 삼괴중고교 ,  우정읍행정복지센터 " ,
+ '장외리.오리골',
+ '돈말입구',
+ '제부도입구',
+ '송교리(경유)',
+ '개경촌',
+ '송교1리',
+ '큰말입구',
+ '장외리.지긋말',
+ '장외리',
+ '숲풀안앞',
+ '광평삼거리',
+ '느티나무앞',
+ '광평주유소',
+ '광평리',
+ '서신중학교후문',
+ '매화리',
+ '서신터미널',
+ '상안리삼거리',
+ '상안2리.SK주유소',
+ '상안1.2리',
+ '상안1리',
+ '신흥사',
+ '상안리.한국발효',
+ '육일2리.코스코밸리',
+ '육일리교차로',
+ '육일리마을회관',
+ '육일리.육교동입구',
+ '사강복지회관',
+ '사강시장',
+ '사강정형외과',
+ '봉가1리',
+ '돼지고개.삼존리물미',
+ '삼존리',
+ '슬항3리',
+ '구리섬휴게소',
+ '외국인보호소',
+ '마도사거리',
+ '재래시장.마도삼거리',
+ '두곡리',
+ '쌍송리입구.은장고개',
+ '남양육리.남양1동',
+ '우림아파트',
+ '경기남부수협.보건소',
+ '남양성지',
+ '남양사거리',
+ '남양읍행정복지센터',
+ '동수원남양병원',
+ '북양1통.봉림사',
+ '북양1통.염티고개',
+ '양노3리',
+ '양노리',
+ '천천리입구',
+ '삼미.쌍용아파트',
+ '북양1통',
+ '은장고개',
+ '구리섬앞',
+ '삼존리자동차성능시험장',
+ '송산농협.사강정형외과',
+ '서신',
+ '목성머리',
+ '살고지입구',
+ '제부해수탕',
+ '상안삼거리',
+ '남양도서관.동광뷰엘',
+ '남양동광뷰엘',
+ '남양뉴타운4단지',
+ '삼화리',
+ '천산아파트',
+ '비봉초등학교후문',
+ '비봉중고등학교',
+ '연화가든앞',
+ '구포리',
+ '야목리',
+ '매송휴먼시아후문',
+ '송라리',
+ '원리',
+ '송라1리',
+ '왕재골입구',
+ '비봉초등학교후문.삼화3리',
+ '삼화리.천산아파트',
+ '조암터미널',
+ '조암터미널(경유)',
+ '우정읍행정복지센터',
+ '삼괴중고교',
+ '조암한라비발디',
+ '어은삼거리',
+ '장안면행정복지센터',
+ '사랑리',
+ '덕다2리앞',
+ '덕다리입구',
+ '독정1리',
+ '독정2리',
+ '위닉스',
+ '감드러지(독정3리)',
+ '독정3리'
+]
+//Prepare one of the sample sentences by removing punctuation,
+// creating an array of words and computing a random size attribute.
+function getWords(i) {
+    return words[i]
+            .replace(/[!\.,:;\?]/g, '')
+            .split(' ')
+            .map(function(d) {
+                return {text: d, size: 10 + Math.random() * 60};
+            })
+}
+
+//This method tells the word cloud to redraw with a new set of words.
+//In reality the new words would probably come from a server request,
+// user input or some other source.
+function showNewWords(vis, i) {
+    i = i || 0;
+
+    vis.update(getWords(i ++ % words.length))
+    setTimeout(function() { showNewWords(vis, i + 1)}, 2000)
+}
+
+//Create a new instance of the word cloud visualisation.
+var myWordCloud = wordCloud('body');
+
+//Start cycling through the demo data
+showNewWords(myWordCloud);
+
+
+</script>

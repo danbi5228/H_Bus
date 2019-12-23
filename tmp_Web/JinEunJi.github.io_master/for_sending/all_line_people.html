@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <title>all_time_line_people</title>
+    </head>
+    <body>
+        <canvas id="myChart"></canvas>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'scatter',
+
+                // The data for our dataset
+                data: {
+                    labels: ['04:00', '05:00'],
+                    datasets: [{
+                        label: '상위 10개 노선',
+                        backgroundColor: '#000880',
+                        borderColor: '#000880',
+                        data: [
+                            {
+                                x: 20,
+                                y: 30
+    
+                            }
+                            
+                        ]
+                    },
+                    {
+                        label: '10개 노선',
+                        backgroundColor: '#00088',
+                        borderColor: '#00080',
+                        data: [
+                            {
+                                x: 20,
+                                y: 50,
+    
+                            }
+                            
+                        ]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+        </script>
+    </body>
+</html> 
